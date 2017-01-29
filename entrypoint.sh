@@ -2,10 +2,6 @@
 # docker entrypoint script
 # configures and starts MySQL
 
-if [ ! -d "/var/run/mysql" ]; then
-  mkdir -p /var/run/mysql
-fi
-
 if [ -d /srv/data/mysql ]; then
   echo "[i] MySQL directory already present, skipping creation"  
 else
