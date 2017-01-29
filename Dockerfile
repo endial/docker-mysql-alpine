@@ -14,3 +14,5 @@ EXPOSE 3306
 VOLUME ["/srv/data", "/srv/conf", "/var/log", "/var/run"]
 
 ENTRYPOINT ["/entrypoint.sh"]
+
+CMD ["/usr/bin/mysqld", "--user=root", "--console", "--character-set-server=utf8"]
