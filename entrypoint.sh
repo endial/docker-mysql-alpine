@@ -50,7 +50,7 @@ EOF
 fi
 
 # start MySQL, move to CMD in Dockfile
-/usr/bin/mysqld --user=root --console
+/usr/bin/mysqld --user=root --console --character-set-server=utf8
 
 # run command passed to docker run
 exec "$@"
