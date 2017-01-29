@@ -9,8 +9,9 @@
 ## 数据卷
 
 ```
-/srv/run/mysql		# MySQL 运行PID文件
-/srv/data/mysql		# MySQL 数据文件
+/var/run			# MySQL 运行PID文件，位于子目录 mysql 中
+/srv/data			# MySQL 数据文件，位于子目录 mysql 中
+/srv/conf			# MySQL 配置文件，位于子目录 mysql 中
 ```
 
 
@@ -37,7 +38,7 @@ docker run --name mysql \
   -e MYSQL_USER=dev \
   -e MYSQL_PASSWORD=mysql \
   -e MYSQL_ROOT_PASSWORD=Passw0rd \
-  -it endial/mysql-alpine
+  -it -d endial/mysql-alpine
 ```
 
 如果存在 dvc（endial/dvc-alpine） 数据卷容器：
@@ -49,7 +50,7 @@ docker run --name mysql \
   -e MYSQL_USER=dev \
   -e MYSQL_PASSWORD=mysql \
   -e MYSQL_ROOT_PASSWORD=Passw0rd \
-  -it endial/mysql-alpine
+  -it -d endial/mysql-alpine
 ```
 
 该容器可以不声明外部接口，使用 phpmyadmin 直接访问：
