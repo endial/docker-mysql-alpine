@@ -2,8 +2,8 @@
 # docker entrypoint script
 # configures and starts MySQL
 
-if [ ! -d "/srv/run/mysql" ]; then
-  mkdir -p /srv/run/mysql
+if [ ! -d "/var/run/mysql" ]; then
+  mkdir -p /var/run/mysql
 fi
 
 if [ -d /srv/data/mysql ]; then
