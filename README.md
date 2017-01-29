@@ -36,6 +36,7 @@ docker run --name mysql \
   -e MYSQL_DATABASE=mybase \
   -e MYSQL_USER=dev \
   -e MYSQL_PASSWORD=mysql \
+  -e MYSQL_ROOT_PASSWORD=Passw0rd \
   -it endial/mysql-alpine
 ```
 
@@ -47,6 +48,7 @@ docker run --name mysql \
   -e MYSQL_DATABASE=mybase \
   -e MYSQL_USER=dev \
   -e MYSQL_PASSWORD=mysql \
+  -e MYSQL_ROOT_PASSWORD=Passw0rd \
   -it endial/mysql-alpine
 ```
 
