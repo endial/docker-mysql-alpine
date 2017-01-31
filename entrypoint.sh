@@ -2,6 +2,14 @@
 # docker entrypoint script
 # configures and starts MySQL
 
+echo "[i] Start MySQL with config /etc/mysql/my.cnf"
+
+if [ ! -f /srv/conf/mysql/my.cnf ]; then
+  echo "[i] MySQL config file  not found, copy from /etc/mysql"
+  mkdir -p /srv/conf/mysql
+  cp /etc/mysql/my.cnf /srv/conf/mysql/
+fi
+
 if [ -d /srv/data/mysql ]; then
   echo "[i] MySQL directory already present, skipping creation"  
 else
@@ -14,6 +22,7 @@ else
   if [ "$MYSQL_ROOT_PASSWORD" = "" ]; then
     MYSQL_ROOT_PASSWORD=`pwgen 16 1`
     echo "[i] MySQL root Password: $MYSQL_ROOT_PASSWORD"
+    echo $MYSQL_ROOT_PASSWORD > /srv/conf/mysql/password
   fi
 
   MYSQL_DATABASE=${MYSQL_DATABASE:-""}
