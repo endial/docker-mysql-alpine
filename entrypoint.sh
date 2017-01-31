@@ -22,7 +22,8 @@ else
   if [ "$MYSQL_ROOT_PASSWORD" = "" ]; then
     MYSQL_ROOT_PASSWORD=`pwgen 16 1`
     echo "[i] MySQL root Password: $MYSQL_ROOT_PASSWORD"
-    echo $MYSQL_ROOT_PASSWORD > /srv/conf/mysql/password
+    echo $MYSQL_ROOT_PASSWORD > /srv/conf/mysql/root_password
+    echo $MYSQL_ROOT_PASSWORD > /srv/data/mysql/root_password
   fi
 
   MYSQL_DATABASE=${MYSQL_DATABASE:-""}

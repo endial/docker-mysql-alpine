@@ -15,4 +15,4 @@ VOLUME ["/srv/data", "/srv/conf", "/var/log", "/var/run"]
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-CMD ["/usr/bin/mysqld","--defaults-file=", "/srv/conf/mysql/my.cnf", "--user=root", "--console", "--character-set-server=utf8"]
+CMD ["/usr/bin/mysqld","--defaults-file=/srv/conf/mysql/my.cnf", "--user=root", "--console", "--character-set-server=utf8"]
