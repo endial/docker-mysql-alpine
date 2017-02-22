@@ -53,7 +53,7 @@ EOF
     fi
   fi
 
-  /usr/bin/mysqld --user=root --bootstrap --verbose=0 < $tfile
+  /usr/bin/mysqld --init-file=$tfile --user=root --verbose=0
   rm -f $tfile
 fi
 
